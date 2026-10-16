@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <title>Farmer's AIde</title>
+  <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="taskpane.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="assets/icon-32.png" alt="" class="header-emblem" width="26" height="26" />
+    <div>
+      <h1>Farmer's AIde</h1>
+      <p class="subtitle">Free State Maize Farm Profile</p>
+    </div>
+  </header>
+
+  <main id="app-body">
+    <form id="profile-form" class="card">
+      <label for="district">District</label>
+      <select id="district" name="district">
+        <option value="Bothaville">Bothaville</option>
+        <option value="Bultfontein">Bultfontein</option>
+        <option value="Kroonstad">Kroonstad</option>
+        <option value="Welkom">Welkom</option>
+        <option value="Viljoenskroon">Viljoenskroon</option>
+        <option value="Hennenman">Hennenman</option>
+      </select>
+
+      <fieldset>
+        <legend>Primary crop</legend>
+        <label class="radio-label">
+          <input type="radio" name="primaryCrop" value="White Maize" checked />
+          White Maize
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="primaryCrop" value="Yellow Maize" />
+          Yellow Maize
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Rotation crops</legend>
+        <label class="checkbox-label">
+          <input type="checkbox" id="rotSunflower" value="Sunflower" />
+          Sunflower
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="rotSoybean" value="Soybean" />
+          Soybean
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="rotWheat" value="Wheat" />
+          Wheat
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Livestock</legend>
+        <label class="radio-label">
+          <input type="radio" name="livestock" value="yes" />
+          Yes
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="livestock" value="no" checked />
+          No
+        </label>
+      </fieldset>
+
+      <label for="hectares">Hectares planted</label>
+      <input type="number" id="hectares" name="hectares" value="250" min="1" step="1" />
+
+      <button type="button" id="run-button">
+        Pull Market Data &amp; Build Sheets
+      </button>
+    </form>
+
+    <div id="status" class="status" role="status"></div>
+  </main>
+</body>
+</html>

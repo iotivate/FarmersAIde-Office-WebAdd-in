@@ -1,0 +1,172 @@
+:root {
+  /* Brand tokens — Farmer's AIde BRAND-THEME.md (light theme) */
+  --color-primary: #15691c; /* Pine 800 */
+  --color-ai-blue: #0c84e4; /* AI Blue 500 */
+  --color-background: #f6f7f2; /* warm paper */
+  --color-surface: #ffffff;
+  --color-on-surface: #18221a;
+  --color-on-surface-variant: #46504a;
+  --color-outline: #c2cbbe;
+  --color-success: #2e7d32;
+  --color-error: #c0362c; /* Terracotta 600 */
+  --color-warning: #e8920c; /* Harvest 500 */
+
+  --radius-card: 20px;
+  --radius-control: 14px;
+  --radius-input: 24px;
+
+  --shadow-card: 0 1px 2px 0 rgba(27, 94, 32, 0.06), 0 12px 24px -4px rgba(16, 27, 18, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--color-on-surface);
+  background-color: var(--color-background);
+}
+
+h1,
+.subtitle {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-primary);
+  color: white;
+  padding: 16px 20px;
+}
+
+.header-emblem {
+  display: block;
+  flex-shrink: 0;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 2px 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.92;
+}
+
+#app-body {
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
+#profile-form label:not(.radio-label):not(.checkbox-label) {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-on-surface);
+}
+
+#profile-form label:first-of-type {
+  margin-top: 0;
+}
+
+#profile-form select,
+#profile-form input[type="number"] {
+  width: 100%;
+  padding: 8px 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-input);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+#profile-form select:focus,
+#profile-form input[type="number"]:focus,
+#profile-form input[type="radio"]:focus-visible,
+#profile-form input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--color-ai-blue);
+  outline-offset: 1px;
+}
+
+fieldset {
+  margin-top: 16px;
+  border: 1px solid var(--color-outline);
+  border-radius: var(--radius-control);
+  padding: 10px 12px;
+}
+
+legend {
+  font-weight: 600;
+  font-size: 13px;
+  padding: 0 4px;
+  color: var(--color-on-surface);
+}
+
+.radio-label,
+.checkbox-label {
+  display: block;
+  font-size: 13px;
+  color: var(--color-on-surface-variant);
+  margin: 6px 0;
+}
+
+#run-button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+}
+
+#run-button:hover {
+  background-color: #0c5a14;
+}
+
+#run-button:disabled {
+  background-color: var(--color-outline);
+  color: var(--color-on-surface-variant);
+  cursor: default;
+  box-shadow: none;
+}
+
+.status {
+  margin-top: 16px;
+  font-size: 12px;
+  white-space: pre-line;
+  color: var(--color-on-surface-variant);
+}
+
+.status.error {
+  color: var(--color-error);
+}
+
+.status.success {
+  color: var(--color-success);
+}

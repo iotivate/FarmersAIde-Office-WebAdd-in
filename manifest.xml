@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+
+  <Id>a7e1c9f2-6b3d-4e8a-9c1f-2d5b8a4f7e10</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>FarmersAIde</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Farmer's AIde" />
+  <Description DefaultValue="Live market data and breakeven calculators for Free State maize farmers." />
+  <IconUrl DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/assets/icon-128.png" />
+  <SupportUrl DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in" />
+
+  <AppDomains>
+    <AppDomain>https://iotivate.github.io</AppDomain>
+    <AppDomain>https://allratestoday.com</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Workbook" />
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/taskpane.html" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title" />
+            <Description resid="GetStarted.Description" />
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl" />
+          </GetStarted>
+          <FunctionFile resid="Taskpane.Url" />
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="FarmersAIde.Group1">
+                <Label resid="CommandsGroup.Label" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16" />
+                  <bt:Image size="32" resid="Icon.32x32" />
+                  <bt:Image size="80" resid="Icon.80x80" />
+                </Icon>
+                <Control xsi:type="Button" id="FarmersAIde.TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label" />
+                    <Description resid="TaskpaneButton.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16" />
+                    <bt:Image size="32" resid="Icon.32x32" />
+                    <bt:Image size="80" resid="Icon.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>FarmersAIde.Taskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/assets/icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/assets/icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://iotivate.github.io/FarmersAIde-Office-WebAdd-in/taskpane.html" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="FarmersAIde is ready" />
+        <bt:String id="CommandsGroup.Label" DefaultValue="FarmersAIde" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Market Data" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Set up your farm profile and pull live market data into this workbook." />
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Open FarmersAIde to set your farm profile and pull market data." />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
